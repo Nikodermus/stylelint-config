@@ -30,5 +30,7 @@
     "url": "https://github.com/Nikodermus/stylelint-config/issues"
   },
   "homepage": "https://github.com/Nikodermus/stylelint-config#readme",
-  "dependencies": {}
+  "dependencies": {
+    "stylelint": "^8.4.0"
+  }
 }
