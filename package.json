@@ -1,10 +1,11 @@
 {
-  "name": "stylelint-config",
+  "name": "stylelint-config-cuemby",
   "version": "0.0.1",
   "description": "Style linting and rules for the Cuemby Team.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "stylelint": "stylelint .",
+    "stylelint-commit": "touch ./test.css && echo 'body{padding: 0.3px}' >> ./test.css && git add ./test.css && git commit 'eslint-commit test'"
   },
   "repository": {
     "type": "git",
