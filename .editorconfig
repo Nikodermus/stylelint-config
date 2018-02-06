@@ -19,10 +19,10 @@ charset = utf-8
 [Makefile]
 indent_style = tab
 
-# Indentation override for all JS
-[*.js]
+# Indentation override for all JS and CSS/SCSS
+[*.{js,styl,scss,css}]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # Indentation override for all YAML files.
 [*.{yaml,yml}]

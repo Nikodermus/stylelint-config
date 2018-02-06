@@ -58,7 +58,7 @@ In case you want to follow this ruleset for all of the projects in your machine 
 
 In any bash or unix based CLI:
 ```sh
-npm install -g stylelint-config-cuemby
+npm install -g stylelint-config-cuemby stylelint-scss
 touch ~/.stylelintrc
 echo '{"extends": "stylelint-config-cuemby"}' >> ~/.stylelintrc
 ```
@@ -83,7 +83,7 @@ fi
 
 stylefailed=0
 for file in ${stylefiles}; do
-  git show :$file | eslint $file
+  git show :$file | stylelint $file
   if [[ $? != 0 ]] ; then
     stylefailed=1
   fi
@@ -99,6 +99,16 @@ fi
    You can also run "npm run stylelint-commit" locally or "stylelint-config-cuemby commit" globally to test the Git Hook.
 
 ### Disable StyleLint <a name="eslint-approved--disable"></a>
+
+If for some given reason, you need to disable ESLint for a code snippet, you can do it this way wrapping the desired code, but allowing to be parsed all across the document:
+```scss
+/* stylelint-disable */
+@includes placeHolder(){
+  color: $gray;
+}
+/* stylelint-enable */
+```
+
 If for some given reason, you need to disable StyleLint for file, you can do it only by ignoring the whole file via a `.stylelintignore` file which uses the `.gitignore` syntax.
 
 In case you need to commit not stylelint-compliant code for a strong reason, disable only what you need and add a comment explaining why the StyleLint was disabled or that instance is not indicated to have it prevent you from committing your code.
